@@ -15,7 +15,7 @@ function login(e) {
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
-            console.log("Login Successful", user.email);
+            // console.log("Login Successful", user.email);
             if (user.email === 'admin@gmail.com') {
                 window.location.href = 'add-product.html'
             }
@@ -45,6 +45,14 @@ if (btnLogin) {
 //     }
 // });
 onAuthStateChanged(auth, (user) => {
+    const hideBtn = document.getElementById('hide-btn');
+    const hideLogin = document.getElementById('hide-login');
+    const hideWishlist = document.querySelector('.nav-wishlist');
+    const hideCart = document.querySelector('.nav-cart');
+    // console.log(hideBtn);
+    // console.log(hideLogin);
+
+
     const path = window.location.pathname;
     if (!user) {
         if (!path.includes('login.html') && !path.includes('index.html')) {
@@ -52,13 +60,19 @@ onAuthStateChanged(auth, (user) => {
         }
     } else {
         if (user.email === 'user@gmail.com') {
-            if (!path.includes('index.html')) {
+            if (!path.includes('index.html') && !path.includes('wishlist.html') && !path.includes('cart.html')) {
                 window.location.href = 'index.html';
             }
+            hideBtn.style.display = "block";
+            hideLogin.style.display = "none";
         } else if (user.email === 'admin@gmail.com') {
             if (!path.includes('add-product.html') && !path.includes('index.html')) {
                 window.location.href = 'add-product.html';
             }
+            hideBtn.style.display = "block";
+            hideLogin.style.display = "none";
+            hideWishlist.style.display = "none";
+            hideCart.style.display = "none";
         }
     }
 });
@@ -122,17 +136,24 @@ function formClear() {
 async function productList() {
     try {
         const querySnapshot = await getDocs(dbCollection);
+        if (querySnapshot.empty) {
+            const notFound = document.getElementById('not-found');
+            notFound.innerHTML = "Product Not Found";
+            notFound.style.color = "red";
+        }
         querySnapshot.forEach((doc) => {
             const productContainer = document.getElementById('product-container');
-            if (!productContainer) {
-                // console.error("Product container element not found.");
-                return;
-            }
+            // if (!productContainer) {
+            //     console.error("not found.");
+            //     return;
+            // }
             const productBox = document.createElement('div');
             productBox.classList.add('swiper-slide');
             const { name, desc, price, imageUrl } = doc.data();
-            // console.log(name, desc, quantity, imageUrl);
+            const id = doc.id;
+            // console.log(doc.id);
 
+            // console.log(name, desc, quantity, imageUrl);
 
             productBox.innerHTML = `
             <div class="card-product wow fadeInUp">
@@ -143,13 +164,13 @@ async function productList() {
                             src="${imageUrl}" alt="${name}" title="${name}">
                     </a>
                     <div class="list-product-btn">
-                        <a href="javascript:void(0);" class="box-icon wishlist btn-icon-action">
+                        <a href="javascript:void(0);" class="box-icon wishlist btn-icon-action" data-product-id="${id}">
                             <span class="icon icon-heart"></span>
                             <span class="tooltip">Wishlist</span>
                         </a>
                     </div>
                     <div class="list-btn-main">
-                        <a href="#shoppingCart" data-bs-toggle="modal" class="btn-main-product">Add To
+                        <a href="javascript:void(0);" class="btn-main-product" data-product-id="${id}" data-name="${name}" data-price="${price}">Add To
                             cart</a>
                     </div>
                 </div>
@@ -161,11 +182,118 @@ async function productList() {
             </div>
         `;
             productContainer.appendChild(productBox);
+
+            // Click Add To Cart
+            const btnAddToCart = productBox.querySelector('.btn-main-product');
+            btnAddToCart.addEventListener('click', (e) => {
+                const productId = e.target.getAttribute('data-product-id');
+                const productName = e.target.getAttribute('data-name');
+                const productPrice = parseFloat(e.target.getAttribute('data-price'));
+                console.log(productId, productName, productPrice);
+            })
+            // end
+
+            // Click Wishlist
+            const wishlistBtn = productBox.querySelector('.wishlist');
+            wishlistBtn.addEventListener('click', (e) => {
+                const productId = e.target.closest('a').getAttribute('data-product-id');
+                const product = { name, desc, price, imageUrl }
+                addToWishlist(productId, product)
+                // console.log(productId);
+            })
+
+
         })
     } catch (e) {
-        console.log("Error", e);
+        // console.log("Error", e);
     }
 
 }
 
 productList();
+
+// Add To Wishlist
+function addToWishlist(productId, product) {
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    const existingProduct = wishlist.find((item) => item.id === productId)
+    if (existingProduct) {
+        alert("Product is already in the Wishlist");
+        return;
+    }
+
+    wishlist.push({ id: productId, ...product })
+    localStorage.setItem('wishlist', JSON.stringify(wishlist))
+    updateWishlistCount();
+}
+// end
+
+// Wishlist Count
+function updateWishlistCount() {
+    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    const wishlistCount = wishlist.length;
+    const countElement = document.getElementById('wishlist-count');
+    if (countElement) {
+        countElement.textContent = wishlistCount;
+    }
+}
+updateWishlistCount();
+// localStorage.clear()
+
+// display wishlist
+function displayWishlist() {
+    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    const wishlistContainer = document.getElementById('wishlist-container');
+    if (wishlistContainer) {
+        wishlistContainer.innerHTML = '';
+    }
+    wishlist.forEach(product => {
+        const { id, name, desc, price, imageUrl } = product;
+        const wishlistBox = document.createElement('div');
+        wishlistBox.classList.add('swiper-slide');
+        wishlistBox.innerHTML = `
+        <div class="card-product wow fadeInUp">
+            <div class="card-product-wrapper aspect-ratio-0">
+                <a href="product-detail.html">
+                    <img class="lazyload img-product"
+                        data-src=${imageUrl}"
+                        src="${imageUrl}" alt="${name}" title="${name}">
+                </a>
+                <div class="list-btn-main">
+                    <a href="javascript:void(0);" class="btn-main-product" data-product-id="${id}" data-name="${name}" data-price="${price}">Add To
+                        cart</a>
+                    <a href="javascript:void(0);" class="remove-wishlist" data-product-id="${id}">Remove</a>
+                </div>
+            </div>
+            <div class="card-product-info">
+                <a href="product-detail.html" class="title link">${name}</a>
+                <p>${desc}</p>
+                <span class="price">$${price}</span>
+            </div>
+        </div>
+    `;
+        wishlistContainer.appendChild(wishlistBox);
+    })
+}
+displayWishlist();
+// end
+
+// Remove from wishlist functionality
+const removeWishlistBtn = document.getElementById('wishlist-container')
+if (removeWishlistBtn) {
+    removeWishlistBtn.addEventListener('click', function (e) {
+        if (e.target && e.target.classList.contains('remove-wishlist')) {
+            const productId = e.target.getAttribute('data-product-id');
+            removeWishlist(productId);
+            updateWishlistCount();
+            displayWishlist();
+        }
+    });
+}
+
+function removeWishlist(productId) {
+    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    const filter = wishlist.filter(item => item.id !== productId);
+    localStorage.setItem('wishlist', JSON.stringify(filter));
+    displayWishlist();
+}
+// end

@@ -21,7 +21,7 @@
     <!-- Favicon and Touch Icons  -->
     <link rel="shortcut icon" href="images/logo/favicon.png">
     <link rel="apple-touch-icon-precomposed" href="images/logo/favicon.png">
-    
+
 </head>
 
 <body class="">
@@ -48,7 +48,7 @@
                     </div>
                     <div class="col-xl-3 col-md-4 col-6">
                         <a href="index.html" class="logo-header">
-                            <img src="images/logo.svg" alt="logo" class="logo">
+                            <img src="images/logo.png" alt="logo" class="logo">
                         </a>
                     </div>
                     <div class="col-xl-6 d-none d-xl-block">
@@ -60,8 +60,8 @@
                         </nav>
                     </div>
                     <div class="col-xl-3 col-md-4 col-3">
-                        <ul class="nav-icon d-flex justify-content-end align-items-center">
-                            <li class="nav-account">
+                        <ul class="nav-icon justify-content-end align-items-center">
+                            <li class="nav-account" id="hide-login">
                                 <a href="login.html" class="nav-icon-item">
                                     <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -76,7 +76,7 @@
                                     </svg>
                                 </a>
                             </li>
-                            <li class="nav-wishlist"><a href="wish-list.html" class="nav-icon-item">
+                            <li class="nav-wishlist"><a href="wishlist.html" class="nav-icon-item">
                                     <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -86,7 +86,7 @@
                                     </svg>
                                 </a>
                             </li>
-                            <li class="nav-cart"><a href="#shoppingCart" data-bs-toggle="modal" class="nav-icon-item">
+                            <li class="nav-cart"><a href="cart.html" class="nav-icon-item">
                                     <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -95,6 +95,9 @@
                                             stroke-linejoin="round"></path>
                                     </svg>
                                     <span class="count-box">1</span></a>
+                            </li>
+                            <li id="hide-btn" style="display: none;">
+                                <button id="btn-logout">Logout</button>
                             </li>
                         </ul>
                     </div>
@@ -120,7 +123,6 @@
                             <li>
                                 Add Product
                             </li>
-                            <button id="btn-logout">Logout</button>
                         </ul>
                     </div>
                 </div>
@@ -139,23 +141,24 @@
                         <form action="#" class="form-login form-has-password">
                             <div class="wrap">
                                 <fieldset class="">
-                                    <input class="" type="text" placeholder="Product Name*"
-                                        tabindex="2" value="" aria-required="true" id="product-name" required="">
+                                    <input class="" type="text" placeholder="Product Name*" tabindex="2" value=""
+                                        aria-required="true" id="product-name" required="">
                                 </fieldset>
                                 <fieldset class="">
-                                    <input class="" type="number" placeholder="Quantity*"
-                                        tabindex="2" value="" aria-required="true" id="product-quantity" required="">
+                                    <input class="" type="number" placeholder="Quantity*" tabindex="2" value=""
+                                        aria-required="true" id="product-quantity" required="">
                                 </fieldset>
                                 <fieldset class="">
-                                    <input class="" type="number" placeholder="Product Price*"
-                                        tabindex="2" value="" aria-required="true" id="product-price" required="">
+                                    <input class="" type="number" placeholder="Product Price*" tabindex="2" value=""
+                                        aria-required="true" id="product-price" required="">
                                 </fieldset>
                                 <fieldset class="">
-                                    <input class="" type="text" placeholder="Image Url*"
-                                        tabindex="2" value="" aria-required="true" id="product-url" required="">
+                                    <input class="" type="text" placeholder="Image Url*" tabindex="2" value=""
+                                        aria-required="true" id="product-url" required="">
                                 </fieldset>
                                 <fieldset class="">
-                                    <textarea rows='5' id="product-desc" placeholder="Description" required=""></textarea>
+                                    <textarea rows='5' id="product-desc" placeholder="Description"
+                                        required=""></textarea>
                                 </fieldset>
                             </div>
                             <div class="button-submit">

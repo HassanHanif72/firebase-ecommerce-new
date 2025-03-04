@@ -421,10 +421,10 @@
                 rect.top >= 0 &&
                 rect.left >= 0 &&
                 rect.bottom <=
-                    (window.innerHeight ||
-                        document.documentElement.clientHeight) &&
+                (window.innerHeight ||
+                    document.documentElement.clientHeight) &&
                 rect.right <=
-                    (window.innerWidth || document.documentElement.clientWidth)
+                (window.innerWidth || document.documentElement.clientWidth)
             );
         }
         $(window).on("scroll", onScroll);
@@ -628,9 +628,9 @@
                     .find(".price-on-sale")
                     .text(
                         "$" +
-                            newPrice
-                                .toFixed(2)
-                                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                        newPrice
+                            .toFixed(2)
+                            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                     );
                 updateTotalPrice(newPrice, productItem);
             });
@@ -661,9 +661,9 @@
                     .find(".total-price")
                     .text(
                         "$" +
-                            totalPrice
-                                .toFixed(2)
-                                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                        totalPrice
+                            .toFixed(2)
+                            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                     );
             }
         });
@@ -1273,14 +1273,17 @@
             var scrollPosition = $(this).scrollTop();
             var myElement = $(".tf-sticky-btn-atc");
 
-            // .tf-product-info-by-btn.offset().top
-            var height = $(".tf-product-info-by-btn").offset().top + 50;
-            // console.log(height);
+            var targetElement = $(".tf-product-info-by-btn");
 
-            if (scrollPosition >= height) {
-                myElement.addClass("show");
-            } else {
-                myElement.removeClass("show");
+            // Check if the element exists
+            if (targetElement.length) {
+                var height = targetElement.offset().top + 50;
+
+                if (scrollPosition >= height) {
+                    myElement.addClass("show");
+                } else {
+                    myElement.removeClass("show");
+                }
             }
         });
     };
