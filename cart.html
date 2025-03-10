@@ -8,13 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="Themesflat Modave, Multipurpose eCommerce Template">
 
-   <!-- font -->
-   <link rel="stylesheet" href="fonts/fonts.css">
-   <link rel="stylesheet" href="fonts/font-icons.css">
-   <link rel="stylesheet" href="css/bootstrap.min.css">
-   <link rel="stylesheet" href="css/swiper-bundle.min.css">
-   <link rel="stylesheet" href="css/animate.css">
-   <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+    <!-- font -->
+    <link rel="stylesheet" href="fonts/fonts.css">
+    <link rel="stylesheet" href="fonts/font-icons.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
 
     <!-- Favicon and Touch Icons  -->
     <link rel="shortcut icon" href="images/logo/favicon.png">
@@ -23,7 +23,7 @@
 </head>
 
 <body class="preload-wrapper">
-    
+
     <!-- Scroll Top -->
     <button id="scroll-top">
         <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,7 +49,7 @@
     <!-- end -->
 
     <div id="wrapper">
-        
+
         <!-- Header -->
         <header id="header" class="header-default">
             <div class="container">
@@ -119,7 +119,7 @@
             </div>
         </header>
         <!-- /Header -->
-        
+
         <!-- page-title -->
         <div class="page-title" style="background-image: url(images/page-title.jpg);">
             <div class="container">
@@ -139,41 +139,7 @@
                     <div class="col-xl-8">
                         <form>
                             <table class="tf-table-page-cart">
-                                <thead>
-                                    <tr>
-                                        <th>Products</th>
-                                        <th>Price</th>
-                                        <th>Quantity</th>
-                                        <th>Total Price</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="tf-cart-item file-delete">
-                                        <td class="tf-cart-item_product">
-                                            <a href="product-detail.html" class="img-box">
-                                                <img src="images/products/womens/women-19.jpg" alt="product">
-                                            </a>
-                                            <div class="cart-info">
-                                                <a href="product-detail.html" class="cart-title link">V-neck cotton T-shirt</a>
-                                            </div>
-                                        </td>
-                                        <td data-cart-title="Price" class="tf-cart-item_price text-center">
-                                            <div class="cart-price text-button price-on-sale">$60.00</div>
-                                        </td>
-                                        <td data-cart-title="Quantity" class="tf-cart-item_quantity">
-                                            <div class="wg-quantity mx-md-auto">
-                                                <span class="btn-quantity btn-decrease">-</span>
-                                                <input type="text" class="quantity-product" name="number" value="1">
-                                                <span class="btn-quantity btn-increase">+</span>
-                                            </div>
-                                        </td>
-                                        <td data-cart-title="Total" class="tf-cart-item_total text-center">
-                                            <div class="cart-total text-button total-price">$60.00</div>
-                                        </td>
-                                        <td data-cart-title="Remove" class="remove-cart"><span class="remove icon icon-close"></span></td>
-                                    </tr>
-                                </tbody>
+                                <!-- render javascript code -->
                             </table>
                         </form>
                     </div>
@@ -183,20 +149,15 @@
                                 <h5 class="title">Order Summary</h5>
                                 <div class="subtotal text-button d-flex justify-content-between align-items-center">
                                     <span>Subtotal</span>
-                                    <span class="total">-$80.00</span>
-                                </div>
-                                <div class="discount text-button d-flex justify-content-between align-items-center">
-                                    <span>Discounts</span>
-                                    <span class="total">-$80.00</span>
+                                    <span class="total-amount">0</span>
                                 </div>
                                 <h5 class="total-order d-flex justify-content-between align-items-center">
                                     <span>Total</span>
-                                    <span class="total">$186,99</span>
+                                    <span class="total-amount">0</span>
                                 </h5>
                                 <div class="box-progress-checkout">
                                     <a href="checkout.html" class="tf-btn btn-reset">Process To Checkout</a>
-                                    <p class="text-button text-center">Or continue shopping</p>
-                                </div>  
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -204,8 +165,8 @@
             </div>
         </section>
         <!-- /Section cart -->
-        
-       
+
+
         <!-- Footer -->
         <footer id="footer" class="footer bg-main">
             <div class="footer-wrap">
@@ -225,11 +186,11 @@
             </div>
         </footer>
         <!-- /Footer -->
-        
-        
+
+
     </div>
-    
-      
+
+
     <!-- mobile menu -->
     <div class="offcanvas offcanvas-start canvas-mb" id="mobileMenu">
         <span class="icon-close icon-close-popup" data-bs-dismiss="offcanvas" aria-label="Close"></span>
@@ -287,81 +248,123 @@
                                 <div class="tf-compare-wrap">
                                     <div class="tf-compare-item file-delete">
                                         <span class="btns-repeat">
-                                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0_5628_27028)">
-                                                <path d="M11.334 1.33301L14.0007 3.99967L11.334 6.66634" stroke="#181818" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                <path d="M2 7.99951V6.66618C2 5.95893 2.28095 5.28066 2.78105 4.78056C3.28115 4.28046 3.95942 3.99951 4.66667 3.99951H14" stroke="#181818" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                <path d="M4.66667 15.9996L2 13.3329L4.66667 10.6663" stroke="#181818" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                <path d="M14 9.33301V10.6663C14 11.3736 13.719 12.0519 13.219 12.552C12.7189 13.0521 12.0406 13.333 11.3333 13.333H2" stroke="#181818" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M11.334 1.33301L14.0007 3.99967L11.334 6.66634"
+                                                        stroke="#181818" stroke-width="1.5" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M2 7.99951V6.66618C2 5.95893 2.28095 5.28066 2.78105 4.78056C3.28115 4.28046 3.95942 3.99951 4.66667 3.99951H14"
+                                                        stroke="#181818" stroke-width="1.5" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path d="M4.66667 15.9996L2 13.3329L4.66667 10.6663"
+                                                        stroke="#181818" stroke-width="1.5" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M14 9.33301V10.6663C14 11.3736 13.719 12.0519 13.219 12.552C12.7189 13.0521 12.0406 13.333 11.3333 13.333H2"
+                                                        stroke="#181818" stroke-width="1.5" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
                                                 </g>
                                                 <defs>
-                                                <clipPath id="clip0_5628_27028">
-                                                <rect width="16" height="16" fill="white" transform="translate(0 0.66626)"/>
-                                                </clipPath>
+                                                    <clipPath id="clip0_5628_27028">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0 0.66626)" />
+                                                    </clipPath>
                                                 </defs>
                                             </svg>
                                         </span>
                                         <span class="icon-close remove"></span>
                                         <a href="product-detail.html" class="image">
-                                            <img class="lazyload" data-src="images/products/womens/women-19.jpg" src="images/products/womens/women-19.jpg" alt="">
+                                            <img class="lazyload" data-src="images/products/womens/women-19.jpg"
+                                                src="images/products/womens/women-19.jpg" alt="">
                                         </a>
                                         <div class="content">
                                             <div class="text-title">
-                                                <a class="link text-line-clamp-2" href="product-detail.html">V-neck cotton T-shirt</a>
+                                                <a class="link text-line-clamp-2" href="product-detail.html">V-neck
+                                                    cotton T-shirt</a>
                                             </div>
                                             <div class="text-button">$59.99</div>
                                         </div>
                                     </div>
                                     <div class="tf-compare-item file-delete">
                                         <span class="btns-repeat">
-                                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0_5628_27028)">
-                                                <path d="M11.334 1.33301L14.0007 3.99967L11.334 6.66634" stroke="#181818" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                <path d="M2 7.99951V6.66618C2 5.95893 2.28095 5.28066 2.78105 4.78056C3.28115 4.28046 3.95942 3.99951 4.66667 3.99951H14" stroke="#181818" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                <path d="M4.66667 15.9996L2 13.3329L4.66667 10.6663" stroke="#181818" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                <path d="M14 9.33301V10.6663C14 11.3736 13.719 12.0519 13.219 12.552C12.7189 13.0521 12.0406 13.333 11.3333 13.333H2" stroke="#181818" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M11.334 1.33301L14.0007 3.99967L11.334 6.66634"
+                                                        stroke="#181818" stroke-width="1.5" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M2 7.99951V6.66618C2 5.95893 2.28095 5.28066 2.78105 4.78056C3.28115 4.28046 3.95942 3.99951 4.66667 3.99951H14"
+                                                        stroke="#181818" stroke-width="1.5" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path d="M4.66667 15.9996L2 13.3329L4.66667 10.6663"
+                                                        stroke="#181818" stroke-width="1.5" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M14 9.33301V10.6663C14 11.3736 13.719 12.0519 13.219 12.552C12.7189 13.0521 12.0406 13.333 11.3333 13.333H2"
+                                                        stroke="#181818" stroke-width="1.5" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
                                                 </g>
                                                 <defs>
-                                                <clipPath id="clip0_5628_27028">
-                                                <rect width="16" height="16" fill="white" transform="translate(0 0.66626)"/>
-                                                </clipPath>
+                                                    <clipPath id="clip0_5628_27028">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0 0.66626)" />
+                                                    </clipPath>
                                                 </defs>
                                             </svg>
                                         </span>
                                         <span class="icon-close remove"></span>
                                         <a href="product-detail.html" class="image">
-                                            <img class="lazyload" data-src="images/products/womens/women-29.jpg" src="images/products/womens/women-29.jpg" alt="">
+                                            <img class="lazyload" data-src="images/products/womens/women-29.jpg"
+                                                src="images/products/womens/women-29.jpg" alt="">
                                         </a>
                                         <div class="content">
                                             <div class="text-title">
-                                                <a class="link text-line-clamp-2" href="product-detail.html">Ramie shirt with pockets </a>
+                                                <a class="link text-line-clamp-2" href="product-detail.html">Ramie shirt
+                                                    with pockets </a>
                                             </div>
                                             <div class="text-button">$72.00</div>
                                         </div>
                                     </div>
                                     <div class="tf-compare-item file-delete">
                                         <span class="btns-repeat">
-                                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0_5628_27028)">
-                                                <path d="M11.334 1.33301L14.0007 3.99967L11.334 6.66634" stroke="#181818" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                <path d="M2 7.99951V6.66618C2 5.95893 2.28095 5.28066 2.78105 4.78056C3.28115 4.28046 3.95942 3.99951 4.66667 3.99951H14" stroke="#181818" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                <path d="M4.66667 15.9996L2 13.3329L4.66667 10.6663" stroke="#181818" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                <path d="M14 9.33301V10.6663C14 11.3736 13.719 12.0519 13.219 12.552C12.7189 13.0521 12.0406 13.333 11.3333 13.333H2" stroke="#181818" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M11.334 1.33301L14.0007 3.99967L11.334 6.66634"
+                                                        stroke="#181818" stroke-width="1.5" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M2 7.99951V6.66618C2 5.95893 2.28095 5.28066 2.78105 4.78056C3.28115 4.28046 3.95942 3.99951 4.66667 3.99951H14"
+                                                        stroke="#181818" stroke-width="1.5" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path d="M4.66667 15.9996L2 13.3329L4.66667 10.6663"
+                                                        stroke="#181818" stroke-width="1.5" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M14 9.33301V10.6663C14 11.3736 13.719 12.0519 13.219 12.552C12.7189 13.0521 12.0406 13.333 11.3333 13.333H2"
+                                                        stroke="#181818" stroke-width="1.5" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
                                                 </g>
                                                 <defs>
-                                                <clipPath id="clip0_5628_27028">
-                                                <rect width="16" height="16" fill="white" transform="translate(0 0.66626)"/>
-                                                </clipPath>
+                                                    <clipPath id="clip0_5628_27028">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0 0.66626)" />
+                                                    </clipPath>
                                                 </defs>
                                             </svg>
                                         </span>
                                         <span class="icon-close remove"></span>
                                         <a href="product-detail.html" class="image">
-                                            <img class="lazyload" data-src="images/products/womens/women-1.jpg" src="images/products/womens/women-1.jpg" alt="">
+                                            <img class="lazyload" data-src="images/products/womens/women-1.jpg"
+                                                src="images/products/womens/women-1.jpg" alt="">
                                         </a>
                                         <div class="content">
                                             <div class="text-title">
-                                                <a class="link text-line-clamp-2" href="product-detail.html">Ribbed cotton-blend top</a>
+                                                <a class="link text-line-clamp-2" href="product-detail.html">Ribbed
+                                                    cotton-blend top</a>
                                             </div>
                                             <div class="text-button">$65.00</div>
                                         </div>
@@ -369,8 +372,10 @@
                                 </div>
                                 <div class="tf-compare-buttons">
                                     <div class="tf-compare-buttons-wrap">
-                                        <a href="compare-products.html" class="tf-btn w-100 btn-fill radius-4"><span class="text text-btn-uppercase">Compare Products</span></a>
-                                        <div class="tf-compapre-button-clear-all clear-file-delete tf-btn w-100 btn-white radius-4 has-border">
+                                        <a href="compare-products.html" class="tf-btn w-100 btn-fill radius-4"><span
+                                                class="text text-btn-uppercase">Compare Products</span></a>
+                                        <div
+                                            class="tf-compapre-button-clear-all clear-file-delete tf-btn w-100 btn-white radius-4 has-border">
                                             <span class="text text-btn-uppercase">Clear All Products</span>
                                         </div>
                                     </div>
@@ -384,7 +389,7 @@
     </div>
     <!-- /compare -->
 
-    
+
     <!-- Javascript -->
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
