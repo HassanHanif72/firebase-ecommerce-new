@@ -56,7 +56,7 @@ onAuthStateChanged(auth, (user) => {
     const path = window.location.pathname;
     if (!user) {
         if (!path.includes('login.html') && !path.includes('index.html')) {
-            window.location.href = 'login.html';
+            window.location.href = 'index.html';
         }
     } else {
         if (user.email === 'user@gmail.com') {
